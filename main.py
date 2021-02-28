@@ -1,7 +1,8 @@
-import os
 import apod
+from decouple import config
 
-key = os.getenv("API_KEY")
+API_KEY = config("API_KEY")
+print(API_KEY)
 
-a = apod.APOD(key)
+a = apod.APOD(API_KEY)
 a.main()
